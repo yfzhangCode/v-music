@@ -27,5 +27,7 @@ export default {
 html,body {
   height: 100%;
   background-color: #000;
+  -webkit-font-smoothing: antialiased; /*chrome、safari*/
+  -moz-osx-font-smoothing: grayscale; /*firefox*/
 }
 </style>
