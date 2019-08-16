@@ -6,24 +6,28 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    env: require('./dev.env'),
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
-        target: 'https://c.y.qq.com',
-        changeOrigin: true,
-        pathRewrite: {
-          "^/api": ''
-        }
-      }
+      // '/api': {
+      //   target: 'https://u.y.qq.com/cgi-bin/musicu.fcg', 
+      //   // changeOrigin: true,
+      //   bypass: function (req, res, proxyOptions) {
+      //     req.headers.referer = 'https://y.qq.com';
+      //     req.headers.host = 'c.y.qq.com';
+      //   },
+      //   pathRewrite: {
+      //     "^/api": '/api'
+      //   }
+      // }
     },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
@@ -58,7 +62,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps
